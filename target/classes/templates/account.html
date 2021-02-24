@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Phone Store My Account</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="commons.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="fragments.html :: menu"></div>
+<!---------- ACCOUNT PAGE ------------------->
+
+<div class="account-page">
+		<div class="container">
+			<div class="row">
+				<!--<img src="images/background1.png" width="80%"> -->
+			</div>
+
+			<div class="col-2">
+				<div class="form-container">
+					<div class="form-btn">
+						<span onclick="login()">Login</span>
+						<span onclick="register()">Register</span>
+						<hr id="Indicator">
+					</div>
+
+						<form id="LoginForm">
+							<input type="text" placeholder="Username">
+							<input type="password" placeholder="Password">
+							<button type="submit" class="btn">Login</button>
+							
+						</form>
+
+						<form id="RegForm">
+							<input type="text" placeholder="Username">
+							<input type="email" placeholder="Email">
+							<input type="password" placeholder="Password">
+							<button type="submit" class="btn">Register</button>
+							
+						</form>
+					
+				</div>
+				
+			</div>
+		</div>
+
+
+
+	<!-- -------------------JS for toggle menu ------------------------------->
+
+		<script>
+			var MenuItems = document.getElementById("MenuItems");
+
+			MenuItems.style.maxHeight = "0px";
+
+			function menutoggle(){
+				if(MenuItems.style.maxHeight == "0px")
+					{
+						MenuItems.style.maxHeight = "200px";
+					}
+				else
+					{
+						MenuItems.style.maxHeight = "0px"	
+					}
+			}
+		</script>
+
+	<!-- -------------------JS for toggle Form ------------------------------->
+
+		<script>
+			var LoginForm = document.getElementById("LoginForm");
+			var RegForm = document.getElementById("RegForm");
+			var Indicator = document.getElementById("Indicator");
+
+				function register() {
+					RegForm.style.transform = "translateX(0px)";
+					LoginForm.style.transform = "translateX(0px)";
+					Indicator.style.transform = "translateX(100px)";
+				}
+
+
+				function login() {
+					RegForm.style.transform = "translateX(300px)";
+					LoginForm.style.transform = "translateX(300px)";
+					Indicator.style.transform = "translateX(0px)";
+				}
+
+		</script>
+</div>
+</body>
+</html>
+
+
+
+
+

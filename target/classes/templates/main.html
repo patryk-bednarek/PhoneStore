@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Mobile Store</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="commons.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+<div class="header">
+	<div class="container">
+
+		<div th:replace="fragments.html :: menu"></div>
+
+		<div class="row">
+			<div class="col-2">
+				<h1>Random text here</h1>
+				<p>Many smartphones in a good price. Check our products!</p>
+				<a href="" class="btn">Explore Now &#10148;</a>
+			</div>
+			<div class="col-2">
+				<img src="images/background2.png">
+			</div>
+
+
+
+		</div>
+	</div>
+</div>
+
+<!-- ----------- FEATURED CATEGORIES  ------>
+
+<div class="categories">
+	<div class="small-container">	
+		<div class="row">
+			<div class="col-3">
+				<img src="images/apple.png">
+			</div>
+			<div class="col-3">
+				<img src="images/samsung.png">
+			</div>
+			<div class="col-3">
+				<img src="images/xiaomi.png">
+			</div>
+		</div>
+	</div>	
+</div>
+
+
+<!------------------------- OFFER--------------->
+
+<div class="offer">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-2">
+				<img src="images/iphone12.png" class="offer-img">
+			</div>
+			<div class="col-2">
+				<p>Exclusively Available on Mobile Store</p>
+				<h1>Iphone 12 Pro</h1>
+				<small>
+					iPhone 12 Pro smartphone was launched on 13th October 2020. The phone comes with a 6.10-inch touchscreen display with a resolution of 1170x2532 pixels at a pixel density of 460 pixels per inch (ppi). The iPhone 12 Pro supports wireless charging, as well as proprietary fast charging.<br>
+				</small>
+				<a href="" class="btn">Buy Now! &#10148;</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--		BRANDS		 					-->
+<div class="brands">
+		<div class="small-container">
+			<div class="row">
+				<div class="col-5">
+					<img src="images/apple-logo.png">
+				</div>
+				<div class="col-5">
+					<img src="images/xiaomi-logo.png">
+				</div>
+				<div class="col-5">
+					<img src="images/samsung-logo.png">
+				</div>
+				<div class="col-5">
+					<img src="images/motorola-logo.png">
+				</div>
+			</div>
+		</div>
+</div>
+
+</body>
+</html>
