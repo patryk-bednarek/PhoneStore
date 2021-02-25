@@ -1,0 +1,52 @@
+.phone-box {
+    width: 80%;
+    margin: 15px auto;
+    border: 2px solid black;
+
+}
+
+.phone-data-box {
+    padding: 10px;
+
+}
+
+.phone-box div {
+    padding: 0 0 0 20px;
+
+}
+
+.phone-data-box div {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+#brand {
+    font-size: 22px;
+}
+
+#model {
+    font-size: 21px;
+}
+
+
+.buy-button {
+    float: right;
+    margin-top: -25px;
+}
+
+.buy-button:hover {
+    color: orange;
+    transition: 0.5s;
+}
+.edit-button {
+    float: right;
+    margin-top: -25px;
+    position: relative;
+    right: 40px;
+}
+
+.edit-button:hover {
+    color: orange;
+    transition: 0.5s;
+}
+

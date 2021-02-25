@@ -4,12 +4,38 @@
     <meta charset="UTF-8">
     <title>Mobile Store</title>
     <link rel="stylesheet" href="commons.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="products.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div th:replace="fragments.html :: menu"></div>
+
+<div class="row">
+    <h2>All Products</h2>
+    <select>
+        <option>Default sorting</option>
+        <option>Sort by price</option>
+        <option>Sort by brand</option>
+    </select>
+</div>
+
+
+<th:block th:each="phone : ${phones}">
+    <div class="phone-box">
+        <div th:text="'Brand: ' + ${phone.brand}" id="brand"></div>
+        <div th:text="'Model: ' + ${phone.model}" id="model"></div>
+        <div class = "phone-data-box">
+            <div th:text="'Software: ' + ${phone.software}"></div>
+            <div th:text="'Price: ' + ${phone.price} + 'zł'"></div>
+            <div th:text="'Pieces: ' + ${phone.pieces}"></div>
+        </div>
+        <a th:href="@{/addToBasket/{model}(model=${phone.model})}" class="buy-button" th:if="${isLogged}">Buy</a>
+        <a th:href="@{/edit/{model}(model=${phone.model})}" class="edit-button">Edit</a>
+    </div>
+</th:block>
 
 </body>
 </html>

@@ -73,6 +73,10 @@ public class Phone {
                 ", pieces=" + pieces +
                 '}';
     }
+
+    public Phone clone() {
+        return new Phone(this.brand, this.model, this.software, this.price, this.pieces);
+    }
 }
 
 

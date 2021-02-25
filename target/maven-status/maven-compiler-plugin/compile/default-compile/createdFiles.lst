@@ -1,0 +1,9 @@
+pl\edu\wszib\phone\store\App.class
+pl\edu\wszib\phone\store\model\view\RegistrationModel.class
+pl\edu\wszib\phone\store\controlers\CommonController.class
+pl\edu\wszib\phone\store\model\Phone.class
+pl\edu\wszib\phone\store\configuration\AppConfiguration.class
+pl\edu\wszib\phone\store\database\IPhonesRepository.class
+pl\edu\wszib\phone\store\database\impl\PhonesRepository.class
+pl\edu\wszib\phone\store\model\User$Role.class
+pl\edu\wszib\phone\store\model\User.class

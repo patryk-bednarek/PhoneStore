@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -19,12 +20,12 @@
                 <ul>
                     <li><a href="/main">Home</a></li>
                     <li><a href="/products">Products</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
                     <li><a href="/account">Account</a></li>
+                    <li><a href="/logout" th:if="${isLogged}">Logout</a></li>
+
                 </ul>
             </nav>
-            <a href=""><img src="images/cart.png" width="30px" height="30px"></a>
+            <a href="/basket" th:if="${isLogged}"><img src="images/cart.png" width="30px" height="30px"></a>
         </div>
     </div>
 </div>

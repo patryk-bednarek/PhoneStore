@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile Store</title>
+    <link rel="stylesheet" href="commons.css">
+    <link rel="stylesheet" href="basket.css">
+    <link rel="stylesheet" href="products.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="fragments.html :: menu"></div>
+
+<div class="brow header">
+    <div class="brand">Brand</div>
+    <div class="model">Model</div>
+    <div class="quantity">Quantity</div>
+    <div class="price">Price per item</div>
+    <div class="total">Sum</div>
+</div>
+
+<th:block th:each="phone : ${phones}">
+    <div class="brow">
+        <div class="brand" th:text="${phone.brand}"></div>
+        <div class="model" th:text="${phone.model}"></div>
+        <div class="quantity" th:text="${phone.pieces}"></div>
+        <div class="price" th:text="${phone.price} + 'zł'"></div>
+        <div class="total" th:text="${phone.price * phone.pieces} + 'zł'"></div>
+    </div>
+</th:block>
+
+<div class="brow header">
+    <div class="brand"></div>
+    <div class="model"></div>
+    <div class="quantity"></div>
+    <div class="price">Final cost:</div>
+    <div class="total" th:text="${sum} + 'zł'"></div>
+</div>
+
+</body>
+</html>

@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="commons.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -23,24 +24,26 @@
 				<div class="form-container">
 					<div class="form-btn">
 						<span onclick="login()">Login</span>
-						<span onclick="register()">Register</span>
+
 						<hr id="Indicator">
 					</div>
 
-						<form id="LoginForm">
-							<input type="text" placeholder="Username">
-							<input type="password" placeholder="Password">
+						<form id="LoginForm"  method="post">
+							<input type="text" placeholder="Login" name="login" th:field="*{userModel.login}">
+							<input type="password" placeholder="Password" name="pass" th:field="*{userModel.pass}">
 							<button type="submit" class="btn">Login</button>
-							
+							<a href="/register">
+								Register
+							</a>
 						</form>
 
-						<form id="RegForm">
-							<input type="text" placeholder="Username">
-							<input type="email" placeholder="Email">
-							<input type="password" placeholder="Password">
+						<!-- <form id="RegForm" method="post" onsubmit="return validate()" name="register-form">
+							<input type="text" placeholder="Login" th:field="*{userModel.login}" id="login">
+							<input type="password" placeholder="Password" th:field="*{userModel.pass}" id="pass">
+							<input type="password" placeholder="Password" th:field="*{userModel.pass}" id="pass2">
 							<button type="submit" class="btn">Register</button>
 							
-						</form>
+						</form> -->
 					
 				</div>
 				
@@ -51,7 +54,7 @@
 
 	<!-- -------------------JS for toggle menu ------------------------------->
 
-		<script>
+	<!--	<script>
 			var MenuItems = document.getElementById("MenuItems");
 
 			MenuItems.style.maxHeight = "0px";
@@ -66,11 +69,11 @@
 						MenuItems.style.maxHeight = "0px"	
 					}
 			}
-		</script>
+		</script> -->
 
 	<!-- -------------------JS for toggle Form ------------------------------->
 
-		<script>
+	<!--	<script>
 			var LoginForm = document.getElementById("LoginForm");
 			var RegForm = document.getElementById("RegForm");
 			var Indicator = document.getElementById("Indicator");
@@ -88,7 +91,7 @@
 					Indicator.style.transform = "translateX(0px)";
 				}
 
-		</script>
+		</script> -->
 </div>
 </body>
 </html>

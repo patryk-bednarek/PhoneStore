@@ -23,4 +23,14 @@ public class PhonesRepository implements IPhonesRepository {
     public List<Phone> getAllPhones() {
         return this.phones;
     }
+
+    @Override
+    public Phone getPhoneByModel(String model) {
+        for(Phone phone : this.phones) {
+            if(phone.getModel().equals(model)) {
+                return phone;
+            }
+        }
+        return null;
+    }
 }

@@ -1,0 +1,30 @@
+.header {
+    margin-top: 50px;
+}
+
+.brow {
+    width: 80%;
+    margin: 10px auto;
+    font-size: 20px;
+}
+.brand {
+    width: 15%;
+    display: inline-block;
+}
+.model {
+    width: 15%;
+    display: inline-block;
+}
+
+.quantity {
+    width: 15%;
+    display: inline-block;
+}
+.price {
+    width: 15%;
+    display: inline-block;
+}
+.total {
+    width: 15%;
+    display: inline-block;
+}
