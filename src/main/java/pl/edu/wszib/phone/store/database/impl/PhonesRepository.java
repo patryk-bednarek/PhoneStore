@@ -33,4 +33,15 @@ public class PhonesRepository implements IPhonesRepository {
         }
         return null;
     }
+
+    @Override
+    public Phone getPhoneByBrand(String brand) {
+        for(Phone phone : this.phones) {
+            if(phone.getModel().equals(brand)) {
+                return phone;
+            }
+        }
+        return null;
+    }
+
 }

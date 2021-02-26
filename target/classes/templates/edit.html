@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile Store</title>
+    <link rel="stylesheet" href="/commons.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/edit.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:replace="fragments.html :: menu"></div>
+
+
+
+<div class="container">
+    <div class="col-2">
+        <div class="form-container">
+            <div id="content">
+                <form method="post" id="edit-html">
+                    <input type="text" th:field="*{phone.brand}">
+                    <input type="text" th:field="*{phone.model}">
+                    <input type="text" th:field="*{phone.software}">
+                    <input type="text" th:field="*{phone.price}">
+                    <input type="text" th:field="*{phone.pieces}">
+                    <button type="submit" class="btn">Edit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+
+

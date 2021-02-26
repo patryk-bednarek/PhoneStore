@@ -23,6 +23,9 @@ public class BasketController {
 
     @RequestMapping(value = "/basket", method = RequestMethod.GET)
     public String basket(Model model) {
+        if(!this.sessionObject.isLogged()){
+            return "redirect:/account";
+        }
         model.addAttribute("phones",this.sessionObject.getBasket());
         model.addAttribute("isLogged", this.sessionObject.isLogged());
         double sum = 0;
@@ -35,6 +38,9 @@ public class BasketController {
 
     @RequestMapping(value = "/addToBasket/{model}", method = RequestMethod.GET)
     public String addToBasket(@PathVariable String model){
+        if(!this.sessionObject.isLogged()){
+            return "redirect:/account";
+        }
         Phone phone = this.phonesRepository.getPhoneByModel(model);
         this.sessionObject.addToBasket(phone.clone());
         return "redirect:/products";

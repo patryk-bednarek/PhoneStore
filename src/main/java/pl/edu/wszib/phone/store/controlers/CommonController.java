@@ -42,8 +42,7 @@ public class CommonController {
         List<Phone> phones = this.phoneRepository.getAllPhones();
         model.addAttribute("phones",phones);
         model.addAttribute("isLogged", this.sessionObject.isLogged());
-
-        model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole() : null);
+        model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
 
         return "products";
     }
