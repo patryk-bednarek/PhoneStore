@@ -7,17 +7,17 @@ import pl.edu.wszib.phone.store.model.Phone;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+
 public class PhonesRepository implements IPhonesRepository {
 
     private final List<Phone> phones = new ArrayList<>();
 
-    public PhonesRepository() {
-        this.phones.add (new Phone("Iphone","11","iOS",1999,19 ));
-        this.phones.add (new Phone("Samsung","Galaxy Note 20","Android",4999,20 ));
-        this.phones.add (new Phone("Xiaomi","Redmi Note 10","MIUI",999,39 ));
-        this.phones.add (new Phone("Huawei","P30 Pro","EMUI",1999,19 ));
-    }
+   // public PhonesRepository() {
+   //     this.phones.add (new Phone("Iphone","11","iOS",1999,19 ));
+   //     this.phones.add (new Phone("Samsung","Galaxy Note 20","Android",4999,20 ));
+   //     this.phones.add (new Phone("Xiaomi","Redmi Note 10","MIUI",999,39 ));
+    //    this.phones.add (new Phone("Huawei","P30 Pro","EMUI",1999,19 ));
+    //}
 
     @Override
     public List<Phone> getAllPhones() {
@@ -41,6 +41,16 @@ public class PhonesRepository implements IPhonesRepository {
                 return phone;
             }
         }
+        return null;
+    }
+
+    @Override
+    public void updatePhone(Phone phone) {
+
+    }
+
+    @Override
+    public Phone getPhoneById(int id) {
         return null;
     }
 

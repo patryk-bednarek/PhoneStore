@@ -38,18 +38,6 @@ public class SessionObject {
         return temp;
     }
 
-    public void addToBasket(Phone phone) {
-        for (Phone phoneFromBasket : this.basket) {
-            if(phoneFromBasket.getModel().equals(phone.getModel())){
-                phoneFromBasket.setPieces(phoneFromBasket.getPieces() + 1);
-                return;
-            }
-        }
-
-        phone.setPieces(1);
-        this.basket.add(phone);
-    }
-
     public List<Phone> getBasket() {
         return basket;
     }

@@ -32,8 +32,8 @@
             <div th:text="'Price: ' + ${phone.price} + 'zł'"></div>
             <div th:text="'Pieces: ' + ${phone.pieces}"></div>
         </div>
-        <a th:href="@{/addToBasket/{model}(model=${phone.model})}" class="buy-button" th:if="${isLogged}">Buy</a>
-        <a th:href="@{/edit/{model}(model=${phone.model})}" class="edit-button" th:if="${isLogged}">Edit</a>
+        <a th:href="@{/addToBasket/{id}(id=${phone.id})}" class="buy-button" th:if="${isLogged}">Buy</a>
+        <a th:if="${role == 'ADMIN'}" th:href="@{/edit/{id}(id=${phone.id})}" class="edit-button" >Edit</a>
     </div>
 </th:block>
 

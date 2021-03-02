@@ -11,14 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Component
+
 public class UsersRepositoryImpl implements IUserRepository {
 
     private final List<User> users = new ArrayList<>();
 
     public UsersRepositoryImpl() {
-        this.users.add(new User("patryk","patryk", Role.USER));
-        this.users.add(new User("admin","admin", Role.ADMIN));
+        this.users.add(new User(0,"patryk","patryk", Role.USER));
+        this.users.add(new User(0,"admin","admin", Role.ADMIN));
     }
 
 

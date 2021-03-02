@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.edu.wszib.phone.store.database.IPhonesRepository;
 import pl.edu.wszib.phone.store.model.Phone;
+import pl.edu.wszib.phone.store.services.IPhoneService;
 import pl.edu.wszib.phone.store.session.SessionObject;
 
 import javax.annotation.Resource;
@@ -17,7 +18,7 @@ import java.util.List;
 public class CommonController {
 
     @Autowired
-    IPhonesRepository phoneRepository;
+    IPhoneService phoneService;
 
     @Resource
     SessionObject sessionObject;
@@ -39,8 +40,8 @@ public class CommonController {
 
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public String httpRequestAction3(Model model) {
-        List<Phone> phones = this.phoneRepository.getAllPhones();
-        model.addAttribute("phones",phones);
+
+        model.addAttribute("phones",this.phoneService.getAllPhones());
         model.addAttribute("isLogged", this.sessionObject.isLogged());
         model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
 

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.edu.wszib.phone.store.database.IPhonesRepository;
 import pl.edu.wszib.phone.store.model.Phone;
+import pl.edu.wszib.phone.store.services.IPhoneService;
 import pl.edu.wszib.phone.store.session.SessionObject;
 
 import javax.annotation.Resource;
@@ -18,17 +19,18 @@ import javax.annotation.Resource;
 public class AdminController {
 
     @Autowired
-    IPhonesRepository phonesRepository;
+    IPhoneService phoneService;
 
     @Resource
     SessionObject sessionObject;
 
-    @RequestMapping(value = "/edit/{model}", method = RequestMethod.GET)
-    public String editForm(@PathVariable String model, Model m) {
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public String editForm(@PathVariable int id, Model m) {
         if(!this.sessionObject.isLogged()){
             return "redirect:/account";
         }
-        Phone phone = this.phonesRepository.getPhoneByModel(model);
+        //Phone phone = this.phonesRepository.getPhoneByModel(model);
+        Phone phone = this.phoneService.getPhoneById(id);
         m.addAttribute("phone", phone);
         m.addAttribute("isLogged", this.sessionObject.isLogged());
         m.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
@@ -36,17 +38,13 @@ public class AdminController {
         return "edit";
     }
 
-    @RequestMapping(value = "/edit/{model}", method = RequestMethod.POST)
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
     public String edit(@ModelAttribute Phone phone) {
         if(!this.sessionObject.isLogged()){
             return "redirect:/account";
         }
-        Phone phoneFromDB = this.phonesRepository.getPhoneByModel(phone.getModel());
-        phoneFromDB.setBrand(phone.getBrand());
-        phoneFromDB.setModel(phone.getModel());
-        phoneFromDB.setSoftware(phone.getSoftware());
-        phoneFromDB.setPrice(phone.getPrice());
-        phoneFromDB.setPieces(phone.getPieces());
+
+        this.phoneService.updatePhone(phone);
 
         return "redirect:/products";
     }

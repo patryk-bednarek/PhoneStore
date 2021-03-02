@@ -8,4 +8,7 @@ public interface IPhonesRepository {
     public List<Phone> getAllPhones();
     Phone getPhoneByModel(String model);
     Phone getPhoneByBrand(String brand);
+    void updatePhone(Phone phone);
+    Phone getPhoneById(int id);
+
 }

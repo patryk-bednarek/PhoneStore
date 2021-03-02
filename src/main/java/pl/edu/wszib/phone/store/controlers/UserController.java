@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.edu.wszib.phone.store.database.IUserRepository;
 import pl.edu.wszib.phone.store.model.User;
 import pl.edu.wszib.phone.store.model.view.RegistrationModel;
+import pl.edu.wszib.phone.store.services.IUserService;
 import pl.edu.wszib.phone.store.session.SessionObject;
 
 import javax.annotation.Resource;
@@ -22,12 +23,10 @@ import java.util.regex.Pattern;
 public class UserController {
 
     @Autowired
-    IUserRepository usersRepository;
+    IUserService userService;
 
     @Resource
     SessionObject sessionObject;
-
-
 
 
     @RequestMapping(value = "/account", method = RequestMethod.GET)
@@ -42,9 +41,7 @@ public class UserController {
 
     @RequestMapping(value = "/account", method= RequestMethod.POST)
     public String login(@ModelAttribute User user) {
-
-
-        this.sessionObject.setLoggedUser(this.usersRepository.authenticate(user));
+        this.userService.authenticate(user);
         if(this.sessionObject.isLogged()) {
 
             return "redirect:/main";
@@ -56,7 +53,7 @@ public class UserController {
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout() {
-        this.sessionObject.setLoggedUser(null);
+        this.userService.logout();
         return "redirect:/account";
     }
 
@@ -81,9 +78,8 @@ public class UserController {
             return "redirect:/register";
         }
 
-        boolean registrationResult = usersRepository.register(new User(registrationModel.getLogin(), registrationModel.getPass(), User.Role.USER));
 
-        if (registrationResult) {
+        if (this.userService.register(registrationModel)) {
             return "redirect:/account";
         } else {
             this.sessionObject.setInfo("login zajety");

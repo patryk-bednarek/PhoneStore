@@ -2,7 +2,7 @@ package pl.edu.wszib.phone.store.model;
 
 public class Phone {
 
-
+    private int id;
     private String brand;
     private String model;
     private String software;
@@ -10,8 +10,8 @@ public class Phone {
     private int pieces;
 
 
-    public Phone(String brand, String model, String software, double price, int pieces) {
-
+    public Phone(int id, String brand, String model, String software, double price, int pieces) {
+        this.id = id;
         this.brand = brand;
         this.model = model;
         this.software = software;
@@ -21,7 +21,13 @@ public class Phone {
 
     public Phone() {}
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getBrand() {
         return brand;
@@ -63,9 +69,14 @@ public class Phone {
         this.pieces = pieces;
     }
 
+    public Phone clone() {
+        return new Phone(this.id, this.brand, this.model, this.software, this.price, this.pieces);
+    }
+
     @Override
     public String toString() {
         return "Phone{" +
+                "id=" + id +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", software='" + software + '\'' +
@@ -74,9 +85,7 @@ public class Phone {
                 '}';
     }
 
-    public Phone clone() {
-        return new Phone(this.brand, this.model, this.software, this.price, this.pieces);
-    }
+
 }
 
 
