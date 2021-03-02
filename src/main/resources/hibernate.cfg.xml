@@ -32,6 +32,8 @@
         <!-- List of XML mapping files -->
         <mapping class="pl.edu.wszib.phone.store.model.Phone"/>
         <mapping class="pl.edu.wszib.phone.store.model.User"/>
+        <mapping class="pl.edu.wszib.phone.store.model.Order"/>
+        <mapping class="pl.edu.wszib.phone.store.model.OrderPosition"/>
 
     </session-factory>
 </hibernate-configuration>

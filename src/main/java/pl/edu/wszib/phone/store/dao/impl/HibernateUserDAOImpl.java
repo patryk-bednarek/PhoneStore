@@ -4,12 +4,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import pl.edu.wszib.phone.store.dao.IUserDAO;
 import pl.edu.wszib.phone.store.model.User;
 import org.hibernate.query.Query;
 
 import javax.persistence.NoResultException;
 
+@Repository
 public class HibernateUserDAOImpl implements IUserDAO {
 
     @Autowired

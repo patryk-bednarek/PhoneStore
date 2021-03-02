@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import pl.edu.wszib.phone.store.dao.IPhoneDAO;
 import pl.edu.wszib.phone.store.model.Phone;
 
@@ -12,6 +13,7 @@ import org.hibernate.query.Query;
 import javax.persistence.NoResultException;
 import java.util.List;
 
+@Repository
 public class HibernatePhoneDAOImpl implements IPhoneDAO {
 
     @Autowired
