@@ -162,7 +162,7 @@ small {
 /*-------------------------account-page-------------------*/
 
 .account-page {
-	padding: 50px 0;
+	padding: 230px 0;
 	background: radial-gradient(#fff,#ffd6d6);
 	margin: auto;
 	display: flex;
@@ -235,7 +235,7 @@ form .btn:focus {
 	background: #ff523b;
 	height: 3px;
 	margin-top: 8px;
-	transform: translateX(100px);
+	transform: translateX(0px);
 	transition: transform 1s;
 }
 

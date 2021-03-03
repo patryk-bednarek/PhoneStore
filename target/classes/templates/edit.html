@@ -13,24 +13,24 @@
 <div th:replace="fragments.html :: menu"></div>
 
 
-
-<div class="container">
-    <div class="col-2">
-        <div class="form-container">
-            <div id="content">
-                <form method="post" id="edit-html">
-                    <input type="text" th:field="*{phone.brand}">
-                    <input type="text" th:field="*{phone.model}">
-                    <input type="text" th:field="*{phone.software}">
-                    <input type="text" th:field="*{phone.price}">
-                    <input type="text" th:field="*{phone.pieces}">
-                    <button type="submit" class="btn">Edit</button>
-                </form>
+<div class="account-page">
+    <div class="container">
+        <div class="col-2">
+            <div class="form-container">
+                <div id="content">
+                    <form method="post" id="edit-html">
+                        <input type="text" th:field="*{phone.brand}">
+                        <input type="text" th:field="*{phone.model}">
+                        <input type="text" th:field="*{phone.software}">
+                        <input type="text" th:field="*{phone.price}">
+                        <input type="text" th:field="*{phone.pieces}">
+                        <button type="submit" class="btn">Edit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 
 
 </body>
